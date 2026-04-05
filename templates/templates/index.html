@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Learning Recommendation System</h1>
+
+    <form method="POST">
+        <select name="interest">
+            <option>Web Development</option>
+            <option>AI/ML</option>
+        </select>
+
+        <select name="level">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+        </select>
+
+        <button type="submit">Recommend</button>
+    </form>
+
+    <ul>
+        {% for item in recommendations %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>
